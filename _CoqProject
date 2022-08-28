@@ -1,0 +1,25 @@
+-R . Top
+Arithmetic.v
+#Ancilla.v
+#Composition.v
+#Contexts.v
+#DBCircuits.v
+#Denotation.v
+#GHZ.v
+#HOASCircuits.v
+#HOASExamples.v
+#HOASLib.v
+#Monad.v
+#Monoid.v
+#Oracles.v
+#SemanticLib.v
+#Symmetric.v
+#TypeChecking.v
+#UnitarySemantics.v
+sin_asin_rules.v
+Grover2QubitBasic.v
+Grover2QubitTotal.v
+Grover2QubitRotations.v
+GroverGeneralImp.v
+#QFT.v
+#NotGrover2QubitGeneral.v
