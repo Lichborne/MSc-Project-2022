@@ -104,6 +104,15 @@ end.
 Lemma gentofcor: denote_box true (@gen_tof 8 gr6) ρ = super ( (I 8)) ρ.
 Proof. matrix_denote. autounfold with den_db. unfold hoas_to_db_box. unfold denote_db_box. destruct gen_tof. solve_matrix.*)
 
+(*unfinished;
+Lemma gen_tof_WT: forall n pf, Typed_Box (@gen_tof n pf).
+ Proof.
+   intros. unfold gen_tof.
+   induction n as [| [| n ] ]. 1,2: type_check.
+   unfold Typed_Box. intros.
+   unfold unbox. 
+Qed. *)
+  
 Lemma n_smaller_Sn : forall n,
     n < S n.
 Proof. intuition. Qed.
@@ -181,7 +190,9 @@ Definition diffusion_op {n} (pf:n>=6) : Box (n ⨂ Qubit) (n ⨂ Qubit) :=
   box_ qs  ⇒
     let_ qs ← all_H (n/2-1) (half_n_minus_smaller_n n (if_g6_g0 pf)) $ qs;
     let_ qs ← all_X (n/2-1) (half_n_minus_smaller_n n (if_g6_g0 pf)) $ qs;
+    let_ qs ← unitary_at1 n _H (n/2-1) (half_n_minus_smaller_n n (if_g6_g0 pf)) $ qs;
     let_ qs ← gen_tof pf $ qs;
+    let_ qs ← unitary_at1 n _H (n/2-1) (half_n_minus_smaller_n n (if_g6_g0 pf)) $ qs;
     let_ qs ← all_X (n/2-1) (half_n_minus_smaller_n n (if_g6_g0 pf)) $ qs;
     let_ qs ← all_H (n/2-1) (half_n_minus_smaller_n n (if_g6_g0 pf)) $ qs;
     qs.
