@@ -16,7 +16,7 @@ Arithmetic.v
 #Symmetric.v
 #TypeChecking.v
 #UnitarySemantics.v
-sin_asin_rules.v
+SinAsinRules.v
 Grover2QubitBasic.v
 Grover2QubitTotal.v
 Grover2QubitRotations.v
