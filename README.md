@@ -19,6 +19,7 @@ are also not included in the compilation, as they are not key parts of the proje
 
 **_GroverGeneralImp.v_** contains an implementation of grover's algorithm for any number of qubits on a state space double the size, and an arbitrary number of rotations.
 
+**SinAsinRules.v_** simply contains the only four specific axioms laid down for the project, which relate to some evaluations of the arcsine function. 
 
 ## Additional:
 
