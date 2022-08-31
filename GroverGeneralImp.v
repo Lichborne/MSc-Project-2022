@@ -215,10 +215,13 @@ Fixpoint grover_iterations_r {n} (r:nat) (pf: n>=6) (fact_pf: S k = n) : Box (n 
                  let_ qs ← grover_oracle $ (eq_succ_wtype_corr qs fact_pf);
                  let_ qs ← diffusion_op (pf) $ (eq_succ_wtype_corr_rev qs fact_pf);
                  qs
-   end.
+end.
+
 
 Definition grover_algorithm {n} (r:nat) (pf: n>=6) (fact_pf: S k = n) : Box One (n ⨂ Qubit) :=
   box_ ()  ⇒    let_ qs ← initMany false n $ ();
+                 let_ qs ← unitary_at1 n _H (n-1) (n_min_smaller_n n (if_g6_g0 pf)) $ qs;
+                 let_ qs ← unitary_at1 n _Z (n-1) (n_min_smaller_n n (if_g6_g0 pf)) $ qs;
                  let_ qs ← all_H (n/2-1) (half_n_minus_smaller_n n (if_g6_g0 pf)) $ qs;
                  let_ qs ← grover_iterations_r r pf fact_pf $ qs;
                  qs.
@@ -233,4 +236,3 @@ Definition padded_boolean_oracle_box {dim} m
       (denote U)
       (@pad (m-2) m dim (outer_product (basis_vector (2 ^ m) x ⊗ (bool_to_ket  y)  ) (basis_vector (2 ^ m) x ⊗  (bool_to_ket  y) )))%M =
     @pad (m-2) m dim (outer_product (basis_vector (2 ^ m) x ⊗ (bool_to_ket (xorb y (f x)))) (basis_vector (2 ^ m) x ⊗ (bool_to_ket (xorb y (f x) ))))%M.
-
