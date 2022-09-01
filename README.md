@@ -11,7 +11,7 @@ Coq versions supported are 8.12 - 8.15. Company Coq in Proof General is suggeste
 and the files in the project in the order which they are to be compiled. The last two supplementary files, QFT.v and NotGrover2QubitGeneral
 are also not included in the compilation, as they are not key parts of the project, but they do compile. **AFTER_TIME EDIT: The standard QWire makefile is to be used with coq's 'make' command to compile using this project file.**
 
-**_\CoqMakefile and CoqMakefile.conf_** are **are not my product** they are taken from QWire and should be used to compile using the project file described above, added here **AFTER TIME** for convenience and clarification. 
+**_\CoqMakefile and CoqMakefile.conf_ and Makefile** are **are not my product** they are taken from QWire and should be used to compile using the project file described above, added here **AFTER TIME** for convenience and clarification. Now with make a simple make will suffice, can be done independent but only subsequent to compiling QWire.
 
 **_Grover2QubitBasic.v_** includes the implementation for an verification of Grover's algogithm for two qubits, one solution, and a single rotation.
 
