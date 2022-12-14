@@ -1,7 +1,7 @@
 # MSc-Project-2022
 Implementation and proofs related to the 2 qubit Grover's algorithm, and a general implementation of Grover's algorithm in QWire.
 
-Please note that a significant portion was written while learning the language framework, and so can be primitive in places. Please see _Grover2QubitRotations.v_ for some resonably interesting proofs and especially _GroverGeneralImp.v_ for sufficiently adequately formulated code. 
+Please note that a significant portion was written while learning the language framework, and so can be primitive in places. The reasoning behind many parts of the implementation is to do with and is explained in the thesis. Please see _Grover2QubitRotations.v_ for some resonably interesting proofs and especially _GroverGeneralImp.v_ for sufficiently adequately formulated code. 
 
 Requires QWire, version as of June 2022. https://github.com/inQWIRE/QWIRE 
 QWire relies on QuantumLib: https://github.com/inQWIRE/QuantumLib
